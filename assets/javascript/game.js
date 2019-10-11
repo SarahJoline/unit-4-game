@@ -67,22 +67,28 @@ console.log(gems);
 
 gems.forEach(element => {
     $('body').append(`<button data='${element}'>`);
+    // $('button').addClass(btn[i], function (index, currentclass);
+
 });
+// gems[0].addClass("emStyle");
+// gems[1].addClass("diStyle");
+// gems[2].addClass("saStyle");
+// gems[3].addClass("ruStyle");
 
 $('button').on('click', function () {
     var valueToAdd = $(this).attr('data');
     score += parseInt(valueToAdd);
-    console.log(score);
+    $('.scoreStat').html(`<h1>${score}</h1>`)
 
     if (score === randomNumber) {
         wins++;
-        alert('you win');
+        $('.status').append(`<h1>WINNER!</h1>`)
     } else if (score > randomNumber) {
         losses++;
-        alert('you lose');
+        $('.status').append(`<h1>LOSER!</h1>`)
     };
 });
-
+// });
 //if the score is greater than the random number the player loses.
 
 // game restarts
