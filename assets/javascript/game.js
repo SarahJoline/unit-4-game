@@ -1,79 +1,41 @@
-// computer chooses and displays a random number between 19 & 120
-var randomNumber = Math.floor((Math.random() * 120) + 19);
-console.log(randomNumber)
-var score = 0;
+var randomNumber = [];
 var wins = 0;
 var losses = 0;
+var score = 0;
 
-//Each crystal his assigned a random hidden value between 1-12
-// var emeraldValue = Math.floor((Math.random() * 12) + 1);
-// var diamondValue = Math.floor((Math.random() * 12) + 1);
-// var sapphireValue = Math.floor((Math.random() * 12) + 1);
-// var rubyValue = Math.floor((Math.random() * 12) + 1);
 
-// //4 crystals that are actually buttons. 
+var emerald;
+var diamond;
+var sapphire;
+var ruby;
 
-// // when a crystal is clicked, the value is added to the score.
+$('body').append(`<button id="sapphire">`);
+$('body').append(`<button id="diamond">`);
+$('body').append(`<button id="ruby">`);
+$('body').append(`<button id="emerald">`);
 
-// function filler() {
+restart();
 
-//     if (score === randomNumber) {
-//         wins++;
-//         alert('you win');
-//     } else if (score > randomNumber) {
-//         losses++;
-//         alert('you lose');
-//     };
 
-//     $('#emerald').on('click', function () {
-//         var valueToAdd = emeraldValue;
-//         score += parseInt(valueToAdd);
-//         console.log(score);
-//     });
-//     $('#diamond').on('click', function () {
-//         var valueToAdd = diamondValue;
-//         score += parseInt(valueToAdd);
-//         console.log(score);
-//     });
-//     $('#sapphire').on('click', function () {
-//         var valueToAdd = sapphireValue;
-//         score += parseInt(valueToAdd);
-//         console.log(score);
-//     });
-//     $('#ruby').on('click', function () {
-//         var valueToAdd = rubyValue;
-//         score += parseInt(valueToAdd);
-//         console.log(score);
-//     });
-// }
+function restart() {
+    score = 0;
 
-// if the total score is equal to the random number the payer wins
-// Made an array that holds each variable that is set to a random number between 1 and 12
-new Array(emerald, diamond, sapphire, ruby);
+    randomNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
-var gems = new Array;
+    $('.ranNum').html(`<h1>${randomNumber}</h1>`)
 
-var emerald = Math.floor((Math.random() * 12) + 1);
-var diamond = Math.floor((Math.random() * 12) + 1);
-var sapphire = Math.floor((Math.random() * 12) + 1);
-var ruby = Math.floor((Math.random() * 12) + 1);
+    emerald = Math.floor((Math.random() * 12) + 1);
+    $('#emerald').attr('data', emerald);
 
-gems.push(emerald);
-gems.push(diamond);
-gems.push(sapphire);
-gems.push(ruby);
+    diamond = Math.floor((Math.random() * 12) + 1);
+    $('#diamond').attr('data', diamond);
 
-console.log(gems);
+    sapphire = Math.floor((Math.random() * 12) + 1);
+    $('#sapphire').attr('data', sapphire);
 
-gems.forEach(element => {
-    $('body').append(`<button data='${element}'>`);
-    // $('button').addClass(btn[i], function (index, currentclass);
-
-});
-// gems[0].addClass("emStyle");
-// gems[1].addClass("diStyle");
-// gems[2].addClass("saStyle");
-// gems[3].addClass("ruStyle");
+    ruby = Math.floor((Math.random() * 12) + 1);
+    $('#ruby').attr('data', ruby);
+};
 
 $('button').on('click', function () {
     var valueToAdd = $(this).attr('data');
@@ -83,18 +45,23 @@ $('button').on('click', function () {
 
     if (score === randomNumber) {
         wins++;
-        $('.status').append(`<h1>WINNER!</h1>`);
+        $('.status').html(`<h1>WINNER!</h1>`);
 
         $('.victories').html(`<h1>${wins}</h1>`);
 
+
+
     } else if (score > randomNumber) {
         losses++;
-        $('.status').append(`<h1>LOSER!</h1>`);
+        $('.status').html(`<h1>LOSER!</h1>`);
 
         $('.defeats').html(`<h1>${losses}</h1>`);
+
+
+    };
+
+    if (score >= randomNumber) {
+        restart();
+
     };
 });
-// });
-//if the score is greater than the random number the player loses.
-
-// game restarts
