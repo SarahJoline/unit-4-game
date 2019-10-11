@@ -78,14 +78,20 @@ gems.forEach(element => {
 $('button').on('click', function () {
     var valueToAdd = $(this).attr('data');
     score += parseInt(valueToAdd);
-    $('.scoreStat').html(`<h1>${score}</h1>`)
+    $('.scoreStat').html(`<h1>${score}</h1>`);
+
 
     if (score === randomNumber) {
         wins++;
-        $('.status').append(`<h1>WINNER!</h1>`)
+        $('.status').append(`<h1>WINNER!</h1>`);
+
+        $('.victories').html(`<h1>${wins}</h1>`);
+
     } else if (score > randomNumber) {
         losses++;
-        $('.status').append(`<h1>LOSER!</h1>`)
+        $('.status').append(`<h1>LOSER!</h1>`);
+
+        $('.defeats').html(`<h1>${losses}</h1>`);
     };
 });
 // });
