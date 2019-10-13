@@ -1,3 +1,68 @@
-body {
-    background-image: 
+* {
+    text-align: center;
+    border-radius: 5px;
 }
+
+.card {
+    background-color: rgba(247, 235, 235, 0.699);
+    padding: 5%;
+    position: absolute;
+    height: 60vh;
+    width: 960px;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+}
+
+body {
+    background-image: url('../images/jdent.jpg');
+    background-size: cover;
+}
+
+.game-name {
+    font-size: 3rem;
+}
+
+.W, .L, .ranNum, .scoreStat {
+    font-size: 30px;
+}
+
+.victories, .defeats {
+    font-size: 30px;
+    display: inline-block;
+}
+
+.button-town {
+    padding: 30px;
+}
+
+#sapphire, #ruby, #emerald, #diamond {
+    height: 50px;
+    width: 100px;
+}
+
+#emerald {
+    background-image: url('../images/emeralds.jpg') ;
+    background-size: cover;
+}
+
+#diamond {
+    background-image: url('../images/Diamonds.jpg') ;
+    background-size: cover;
+}
+
+#sapphire {
+    background-image: url('../images/sapphires.jpg') ;
+    background-size: cover;
+}
+
+#ruby {
+    background-image: url('../images/rubies.jpg') ;
+    background-size: cover;
+}
+
+.status {
+    font-size: 4rem;
+    padding: 10px;
+}
+ 

@@ -9,10 +9,10 @@ var diamond;
 var sapphire;
 var ruby;
 
-$('body').append(`<button id="sapphire">`);
-$('body').append(`<button id="diamond">`);
-$('body').append(`<button id="ruby">`);
-$('body').append(`<button id="emerald">`);
+$('.button-town').append(`<button id="emerald">`);
+$('.button-town').append(`<button id="diamond">`);
+$('.button-town').append(`<button id="sapphire">`);
+$('.button-town').append(`<button id="ruby">`);
 
 restart();
 
